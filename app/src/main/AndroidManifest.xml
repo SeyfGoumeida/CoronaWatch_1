@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.coronawatch">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,13 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:name=".LoaderActivity"
+            android:theme="@style/LoginPage" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".APIHandler" />
+        <activity android:name=".ArticlesActivity" />
+        <activity android:name=".VolleySingleton" />
+        <activity
+            android:name=".UserActivity"
+            android:theme="@style/LoginPage" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/LoginPage">
         </activity>
     </application>
 
